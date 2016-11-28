@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h3><%= @user.username %></h3>
+</div>
+
+<tr>
+  <% @user.photos.each do |photo| %>
+    <td><img src="<%= photo.image %>"></td>
+    <td>
+      <ul>
+        <li><%= photo.caption %></li>
+<!--        <% photo.comments.each do |comment| %>
+          <li><%= User.find_by(:id => comment.user_id).username %>: <%= comment.body %></li>
+        <% end %>
+-->      </ul>
+    </td>
+  <% end %>
+</tr>

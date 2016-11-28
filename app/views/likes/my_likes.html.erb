@@ -1,0 +1,13 @@
+<tr>
+  <% current_user.likes.each do |like| %>
+    <td><img src="<%= Photo.find_by(:id => like.photo_id).image %>"></td>
+    <td>
+      <ul>
+        <li><%= Photo.find_by(:id => like.photo_id).caption %></li>
+<!--        <% Photo.find_by(:id => like.photo_id).comments.each do |comment| %>
+          <li><%= User.find_by(:id => comment.user_id).username %>: <%= comment.body %></li>
+        <% end %>
+-->      </ul>
+    </td>
+  <% end %>
+</tr>
